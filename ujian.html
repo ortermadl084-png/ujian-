@@ -1,0 +1,40 @@
+ujian.html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ujian Anti-Contek</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; user-select: none; -webkit-user-select: none; }
+        .box { border: 2px solid #333; padding: 15px; border-radius: 8px; }
+        #layar-merah { 
+            display: none; position: fixed; top: 0; left: 0; 
+            width: 100%; height: 100%; background: red; 
+            color: white; text-align: center; padding-top: 100px; z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="layar-merah">
+        <h1>⚠️ TERDETEKSI CURANG!</h1>
+        <p>Kamu ketahuan buka tab lain atau keluar aplikasi.</p>
+        <button onclick="location.reload()">Minta Maaf & Reset</button>
+    </div>
+
+    <div class="box">
+        <h2>Soal Latihan OSN</h2>
+        <p>1. Jika percepatan $a = 6t$, tentukan kecepatan saat $t=2$...</p>
+        <input type="text" placeholder="Isi jawaban di sini">
+    </div>
+
+    <script>
+        // JANGAN DIUBAH: Ini bagian deteksi curangnya
+        document.addEventListener("visibilitychange", function() {
+            if (document.hidden) {
+                document.getElementById('layar-merah').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
